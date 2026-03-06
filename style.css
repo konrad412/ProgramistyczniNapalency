@@ -1,0 +1,33 @@
+
+.naglowek {
+    background-color: #660000;
+    color: white;
+    padding: 4%;
+    margin: 5%;
+    text-align: center;
+    border-radius: 5%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(baner.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.srodek{
+    display: flex;
+    padding: 10%;
+    justify-content: center;
+    gap: 20%;
+}
+
+.blok1, .blok2 {
+    background-color: #660000;
+    color: white;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 5%;
+    flex: 1;
+    max-width: 10%;
+}
