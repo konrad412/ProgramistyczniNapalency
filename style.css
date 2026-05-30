@@ -1,59 +1,65 @@
-
-.naglowek {
-    background-color: #660000;
-    color: white;
-    padding: 4%;
-    margin: 5%;
-    text-align: center;
-    border-radius: 5%;
-}
-
-body {
+body.tlo {
     font-family: Arial, sans-serif;
     background-image: url(baner.png);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #991818;
+    background-image: radial-gradient(circle, #ffffff 0%, #e6e6e6 100%);
+    color: #1a1a1a;
+    min-height: 100vh;
+}   
+
+.naglowek {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.wybor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+
 }
 
 .srodek{
     display: flex;
-    padding: 10%;
-    justify-content: center;
-    gap: 20%;
+    flex-direction: column;
+    padding: 20px;
+    justify-items: center;
+    gap: 20px;
 }
 
-.blok1, .blok2 {
+.blok1, .blok2, .blok3 {
     background-color: #660000;
     color: white;
-    padding: 5%;
-    margin: 5%;
-    border-radius: 5%;
-    flex: 1;
-    max-width: 10%;
-}
-
-.menu-zakladki {
-    background-color: rgba(102, 0, 0, 0.8);
-    padding: 15px;
-    text-align: center;
-    margin: 0 5%;
+    padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: none;
 }
 
-.menu-zakladki a {
+.naglowekoprawy {
+    background-color: rgba(146, 129, 129, 0.8);
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid white;
-    transition: background-color 0.3s;
-}
-
-.menu-zakladki a:hover, .menu-zakladki a.aktywna {
-    background-color: white;
-    color: #660000;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .srodek-oprawy {
@@ -61,8 +67,17 @@ body {
     color: white;
     padding: 3%;
     margin: 2% 5%;
-    border-radius: 10px;
+    border-radius: 10%;
 }
+.srodek-oprawy img {
+        max-width: 40%;
+        height: auto;
+        border-radius: 10%;
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
 .grid-opraw {
     display: flex;
@@ -72,22 +87,16 @@ body {
     margin-top: 20px;
 }
 
-.karta-oprawy {
-    background-color: #660000;
-    border: 2px solid #fff;
-    padding: 15px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+@media(min-width: 768px) {
+    .srodek {
+        flex-direction: row;
+        justify-content: center;
+        padding: 50px;
+        gap: 5%;
+    }
+    
 }
 
-.karta-oprawy h3 {
-    margin-top: 0;
-}
 
-.karta-oprawy img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
-}
+
+
