@@ -1,10 +1,5 @@
 console.log("Skrypt API v4.1 - Final (SPA + LocalStorage + Sortowanie + Czysty HTML + Formatowanie Ksyw w Nawiasy)");
 
-const apiKey = "489c2f503dfb86e5144c2502f98a2e09"; 
-const baseUrl = "https://v3.football.api-sports.io";
-const leagueId = 106; 
-const season = 2023; 
-
 //Przykładowi maniacy żeby nie było pusto
 
 const domyslniManiacy = [
@@ -113,7 +108,7 @@ function renderujStatystyki() {
                 <input type="text" id="nowe-imie" placeholder="Imię i ksywa" class="input-maniak">
                 <input type="number" id="nowe-wyjscia" placeholder="Wyjścia" class="input-maniak krotki-input">
                 <input type="number" id="nowy-szpital" placeholder="Pobyty w szpitalu" class="input-maniak szpital-input">
-                <input type="text" id="nowa-waga" placeholder="Waga w kg" class="input-maniak waga-input">
+                <input type="number" id="nowa-waga" placeholder="Waga w kg" class="input-maniak waga-input">
                 <input type="number" id="nowe-uderzenia" placeholder="Uderzenia" class="input-maniak sredni-input">
                 <input type="number" id="nowe-obrazenia" placeholder="Obrażenia" class="input-maniak sredni-input">
                 <button onclick="dodajManiaka()" class="btn-dodaj">DODAJ</button>
@@ -255,7 +250,6 @@ function generujWierszeManiakow(daneDoWyswietlenia) {
         return;
     }
 
-    // Naprawiono literówkę z ukrytym znakiem cyrylicy
     daneDoWyswietlenia.sort((a, b) => {
         const bilansA_prawdziwy = a.uderzenia - a.obrazenia;
         const bilansB_prawdziwy = b.uderzenia - b.obrazenia;
@@ -288,7 +282,7 @@ function dodajManiaka() {
     let imie = document.getElementById('nowe-imie').value.trim();
     const wyjscia = document.getElementById('nowe-wyjscia').value;
     const szpital = document.getElementById('nowy-szpital').value;
-    const waga = document.getElementById('nowa-waga').value.trim();
+    const waga = document.getElementById('nowa-waga').value;
     const uderzenia = document.getElementById('nowe-uderzenia').value;
     const obrazenia = document.getElementById('nowe-obrazenia').value;
 
@@ -308,7 +302,7 @@ function dodajManiaka() {
         imie: imie,
         wyjscia: parseInt(wyjscia) || 0,
         szpital: parseInt(szpital) || 0,
-        waga: waga || "Nieznana",
+        waga: parseInt(waga) || 0,
         uderzenia: parseInt(uderzenia) || 0,
         obrazenia: parseInt(obrazenia) || 0
     };
@@ -328,6 +322,11 @@ function dodajManiaka() {
 }
 
 //API
+
+const apiKey = "489c2f503dfb86e5144c2502f98a2e09"; 
+const baseUrl = "https://v3.football.api-sports.io";
+const leagueId = 106; 
+const season = 2023; 
 
 async function pobierzDanePilkarskie() {
     console.log("Funkcja pobierzDanePilkarskie wystartowała.");
